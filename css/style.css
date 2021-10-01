@@ -636,3 +636,11 @@ body {
   font-size: 22px;
   font-weight: bold;
 }
+
+.button-close {
+  background-color: #ff0040;
+}
+
+button {
+  margin: 5px;
+}

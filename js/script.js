@@ -10,7 +10,7 @@ const toHTML = fruit => `
               <img src="${fruit.img}" class="img" alt="${fruit.title}">
               <div class="buttons">
                 <button class="button-price" data-btn="price" data-id="${fruit.id}">Посмотреть цену</button>
-                <button class="button-del">Удалить</button>
+                <button class="button-del" data-btn="delete" data-id="${fruit.id}">Удалить</button>
               </div>
             </div>
 `
@@ -32,14 +32,17 @@ const priceModal = $.modal({
   }]
 })
 
+
+
 document.addEventListener('click', event=>{
   event.preventDefault()
   const id = +event.target.dataset.id
   
-
-  if (event.target.getAttribute('data-btn') == 'price') {
+  
+  if (event.target.getAttribute('data-btn') === 'price') {
     const fruit = fruits.find(f => f.id === id)
     priceModal.setContent(`<p>Цена на ${fruit.title}: <strong>${fruit.price}$</p>`)
     priceModal.open()
-  }
+  } 
+  
 })
