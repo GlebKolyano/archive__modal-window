@@ -9,34 +9,37 @@ const toHTML = fruit => `
               <h2 class="sub-title">${fruit.title}</h2>
               <img src="${fruit.img}" class="img" alt="${fruit.title}">
               <div class="buttons">
-                <button class="button-price">Посмотреть цену</button>
+                <button class="button-price" data-btn="price" data-id="${fruit.id}">Посмотреть цену</button>
                 <button class="button-del">Удалить</button>
               </div>
             </div>
 `
 function render() {
-  const html = fruits.map(fruit => toHTML(fruit)).join('') 
+  const html = fruits.map(fr => toHTML(fr)).join('') 
   document.querySelector('#fruits').innerHTML = html
 }
 render()
 
-const modal = $.modal({
-  title: 'My Modal',
+const priceModal = $.modal({
+  title: 'Цена на товар',
   closable: true,
-  content: `
-    <h2>Modal is working </h2>
-    <p>lorem ipsum dolor sit.</p>`,
-  maxWidth: '500px',
+  maxWidth: '400px',
   footerButtons: [{
     text: 'Ok', type: 'button', handler() {
       console.log('1 clicked')
-      modal.close()
-    }
-  },
-  {
-    text: 'Cancel', type: 'button-close', handler() {
-      console.log('2 clicked')
-      modal.close()
+      priceModal.close()
     }
   }]
+})
+
+document.addEventListener('click', event=>{
+  event.preventDefault()
+  const id = +event.target.dataset.id
+  
+
+  if (event.target.getAttribute('data-btn') == 'price') {
+    const fruit = fruits.find(f => f.id === id)
+    priceModal.setContent(`<p>Цена на ${fruit.title}: <strong>${fruit.price}$</p>`)
+    priceModal.open()
+  }
 })
