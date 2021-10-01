@@ -510,6 +510,9 @@ body {
   font-size: 2rem;
   cursor: pointer;
 }
+.modal-window .modal-body {
+  font-size: 20px;
+}
 .modal-window .modal-footer {
   border-top: 1px solid rgba(0, 0, 0, 0.281);
   display: -webkit-box;
