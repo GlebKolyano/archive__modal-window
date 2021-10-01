@@ -522,14 +522,15 @@ body {
       justify-content: space-around;
   padding: 5px 0;
 }
-.modal-window .modal-footer button {
+.modal-window .modal-footer .button,
+.modal-window .modal-footer .button-close {
   max-width: 150px;
   width: 100%;
   height: 45px;
   color: white;
   font-size: 18px;
   border-radius: 5px;
-  background-color: #00a2ff;
+  background-color: #0066ff;
 }
 
 .modal-window,
@@ -571,4 +572,63 @@ body {
 
 .modal.hide .modal-window {
   top: 40%;
+}
+
+.fruits-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.fruits-card {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 30%;
+          flex: 0 1 30%;
+  padding: 10px;
+  border: 2px solid rgba(160, 160, 160, 0.205);
+  -webkit-box-shadow: 5px 5px 4px 1px rgba(0, 0, 0, 0.075);
+          box-shadow: 5px 5px 4px 1px rgba(0, 0, 0, 0.075);
+  border-radius: 10px;
+  max-height: 500px;
+  text-align: center;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: auto 1fr auto;
+  grid-template-rows: auto 1fr auto;
+}
+
+.img {
+  width: 70%;
+  height: 70%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.button-price {
+  max-width: 150px;
+  width: 100%;
+  height: 45px;
+  color: white;
+  font-size: 18px;
+  border-radius: 5px;
+  background-color: #0066ff;
+}
+
+.button-del {
+  max-width: 150px;
+  width: 100%;
+  height: 45px;
+  color: white;
+  font-size: 18px;
+  border-radius: 5px;
+  background-color: #ff0040;
+}
+
+.sub-title {
+  font-size: 20px;
 }
