@@ -1,7 +1,7 @@
 let fruits = [
-  {id: 1, title: 'Огурец', price: 5, img: '/img/1.jpg'},
-  {id: 2, title: 'Помидор', price: 8, img: '/img/2.jpg'},
-  {id: 3, title: "Перец", price: 10, img: '/img/3.jpg'}
+  {id: 1, title: 'Огурец', price: 5, img: '/modal__window__js/img/1.jpg'},
+  {id: 2, title: 'Помидор', price: 8, img: '/modal__window__js/img/2.jpg'},
+  {id: 3, title: "Перец", price: 10, img: '/modal__window__js/img/3.jpg'}
 ]
 
 const toHTML = fruit => `
