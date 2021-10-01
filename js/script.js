@@ -1,4 +1,4 @@
-const fruits = [
+let fruits = [
   {id: 1, title: 'Огурец', price: 5, img: '/img/1.jpg'},
   {id: 2, title: 'Помидор', price: 8, img: '/img/2.jpg'},
   {id: 3, title: "Перец", price: 10, img: '/img/3.jpg'}
@@ -43,6 +43,20 @@ document.addEventListener('click', event=>{
     const fruit = fruits.find(f => f.id === id)
     priceModal.setContent(`<p>Цена на ${fruit.title}: <strong>${fruit.price}$</p>`)
     priceModal.open()
+  } else if (event.target.getAttribute('data-btn') === 'delete') {
+    const fruit = fruits.find(f => f.id === id)
+    $.confirm({
+      title: 'Вы уверены?',
+      content: `<p>Вы удаляете фрукт: <strong> ${fruit.title} </strong></p>`
+    
+    }).then( () => {
+      fruits = fruits.filter(f => f.id !== id)
+      render()
+      console.log('remove')
+    }).catch(()=> {
+      console.log('cansel')
+    })
+    
   } 
   
 })
