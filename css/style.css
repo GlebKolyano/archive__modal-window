@@ -592,7 +592,7 @@ body {
           box-shadow: 5px 5px 4px 1px rgba(0, 0, 0, 0.075);
   border-radius: 10px;
   max-height: 500px;
-  text-align: center;
+  text-align: start;
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: auto 1fr auto;
@@ -630,5 +630,6 @@ body {
 }
 
 .sub-title {
-  font-size: 20px;
+  font-size: 22px;
+  font-weight: bold;
 }
