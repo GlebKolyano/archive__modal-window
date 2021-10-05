@@ -1,5 +1,7 @@
 #modal__window__js
 
+Dynamic creation of product cards
+
 #git page
 https://glebkolyano.github.io/modal__window__js/
 
